@@ -13,13 +13,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+
         Vector2 position = transform.position;
-        position.y = position.y + 0.05f;
+        position.x = position.x + 5.0f * horizontal * Time.deltaTime;
+        position.y = position.y + 5.0f * vertical * Time.deltaTime;
         transform.position = position;
 
-        Vector3 position1= transform.position;
-        position.x = position.x + 0.05f;
-        transform.position = position;
-
+    
     }
 }
